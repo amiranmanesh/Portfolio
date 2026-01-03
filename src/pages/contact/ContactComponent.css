@@ -104,6 +104,29 @@
   font-family: "Google Sans Medium";
 }
 
+.contact-links {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact-links a {
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+.contact-dot {
+  opacity: 0.6;
+}
+
 .blog-header-detail-text {
   font-size: 20px;
   line-height: 30px;

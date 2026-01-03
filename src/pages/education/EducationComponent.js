@@ -22,14 +22,6 @@ function Education(props) {
               <h1 className="heading-text" style={{ color: theme.text }}>
                 Education
               </h1>
-              <h3
-                className="heading-sub-text"
-                style={{ color: theme.text }}
-              ></h3>
-              <p
-                className="experience-header-detail-text subTitle"
-                style={{ color: theme.secondaryText }}
-              ></p>
             </div>
           </div>
         </Fade>

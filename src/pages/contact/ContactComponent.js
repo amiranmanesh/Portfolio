@@ -2,14 +2,12 @@ import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import BlogsImg from "./BlogsImg";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
 import { greeting, contactPageData } from "../../portfolio.js";
 import { style } from "glamor";
 
 const ContactData = contactPageData.contactSection;
-const blogSection = contactPageData.blogSection;
 
 function Contact(props) {
   const theme = props.theme;
@@ -47,11 +45,31 @@ function Contact(props) {
               >
                 {ContactData["description"]}
               </p>
+
+              <div
+                className="contact-links"
+                style={{ color: theme.secondaryText }}
+              >
+                <a href="mailto:iranmanesh.ah@gmail.com">
+                  iranmanesh.ah@gmail.com
+                </a>
+                <span className="contact-dot">·</span>
+                <a href="tel:+989399439483">+98 939 943 9483</a>
+                <span className="contact-dot">·</span>
+                <a
+                  href="https://amiranmanesh.ir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  amiranmanesh.ir
+                </a>
+              </div>
+
               <SocialMedia />
               <br />
               <br />
               <a {...styles} className="general-btn" href={greeting.resumeLink}>
-                See my Resume
+                View resume
               </a>
             </div>
           </div>
