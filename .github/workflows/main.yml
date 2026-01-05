@@ -28,7 +28,7 @@ jobs:
       - name: Build app
         run: |
           echo * Npm install *
-          npm i
+          npm i --legacy-peer-deps
           echo *** Building app ***
           CI=''; npm run build
       - name: Initial branch
