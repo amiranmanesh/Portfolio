@@ -69,41 +69,6 @@ const skills = {
           },
         },
         {
-          skillName: "Docker",
-          fontAwesomeClassname: "simple-icons:docker",
-          style: {
-            color: "#2496ed",
-          },
-        },
-        {
-          skillName: "Kubernetes",
-          fontAwesomeClassname: "simple-icons:kubernetes",
-          style: {
-            color: "#326ce5",
-          },
-        },
-        {
-          skillName: "Postgres",
-          fontAwesomeClassname: "simple-icons:postgresql",
-          style: {
-            color: "#336791",
-          },
-        },
-        {
-          skillName: "MongoDB",
-          fontAwesomeClassname: "simple-icons:mongodb",
-          style: {
-            color: "#149b4e",
-          },
-        },
-        {
-          skillName: "Redis",
-          fontAwesomeClassname: "simple-icons:redis",
-          style: {
-            color: "#dc382d",
-          },
-        },
-        {
           skillName: "Android",
           fontAwesomeClassname: "simple-icons:android",
           style: {
@@ -129,13 +94,6 @@ const skills = {
           fontAwesomeClassname: "simple-icons:git",
           style: {
             color: "#E94E32",
-          },
-        },
-        {
-          skillName: "AWS",
-          fontAwesomeClassname: "simple-icons:amazonaws",
-          style: {
-            color: "#FF9900",
           },
         },
       ],
@@ -169,6 +127,16 @@ const skills = {
           fontAwesomeClassname: "simple-icons:rabbitmq",
           style: { color: "#FF6600" },
         },
+        {
+          skillName: "Kafka",
+          fontAwesomeClassname: "simple-icons:apachekafka",
+          style: { color: "#4c00ffff" },
+        },
+        {
+          skillName: "Nats",
+          fontAwesomeClassname: "simple-icons:natsdotio",
+          style: { color: "#4c00ffff" },
+        },
       ],
     },
     {
@@ -182,7 +150,7 @@ const skills = {
       softwareSkills: [
         {
           skillName: "Blockchain",
-          fontAwesomeClassname: "simple-icons:blockchaincom",
+          fontAwesomeClassname: "simple-icons:blockchaindotcom",
           style: { color: "#121D33" },
         },
         {
@@ -222,8 +190,18 @@ const skills = {
           style: { color: "#FF9900" },
         },
         {
+          skillName: "Elastic",
+          fontAwesomeClassname: "simple-icons:elastic",
+          style: { color: "#F46800" },
+        },
+        {
           skillName: "Grafana",
           fontAwesomeClassname: "simple-icons:grafana",
+          style: { color: "#F46800" },
+        },
+        {
+          skillName: "Prometheus",
+          fontAwesomeClassname: "simple-icons:prometheus",
           style: { color: "#F46800" },
         },
       ],
