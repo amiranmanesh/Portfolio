@@ -9,16 +9,18 @@ import ExperienceImg from "./ExperienceImg";
 
 function Experience(props) {
   const theme = props.theme;
-  console.log(props.setTheme);
+
   return (
     <div className="experience-main">
       <Header theme={theme} setTheme={props.setTheme} />
-      <div className="basic-experience">
-        <Fade bottom duration={2000} distance="40px">
+
+      <section className="basic-experience">
+        <Fade bottom duration={1200} distance="30px">
           <div className="experience-heading-div">
             <div className="experience-heading-img-div">
               <ExperienceImg theme={theme} />
             </div>
+
             <div className="experience-heading-text-div">
               <h1
                 className="experience-heading-text"
@@ -26,24 +28,25 @@ function Experience(props) {
               >
                 {experience.title}
               </h1>
-              <h3
+              <h2
                 className="experience-heading-sub-text"
-                style={{ color: theme.text }}
-              >
-                {experience["subtitle"]}
-              </h3>
-              <p
-                className="experience-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {experience["description"]}
+                {experience.subtitle}
+              </h2>
+              <p
+                className="experience-header-detail-text"
+                style={{ color: theme.secondaryText }}
+              >
+                {experience.description}
               </p>
             </div>
           </div>
         </Fade>
-      </div>
-      <ExperienceAccordion sections={experience["sections"]} theme={theme} />
-      <Footer theme={props.theme} onToggle={props.onToggle} />
+      </section>
+
+      <ExperienceAccordion sections={experience.sections} theme={theme} />
+      <Footer theme={props.theme} />
     </div>
   );
 }

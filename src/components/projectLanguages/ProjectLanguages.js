@@ -1,6 +1,29 @@
 import React from "react";
 import "./ProjectLanguages.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import {
+  SiAndroid,
+  SiFirebase,
+  SiGo,
+  SiKotlin,
+  SiNodedotjs,
+  SiPostgresql,
+  SiRabbitmq,
+  SiRedis,
+  SiStellar,
+} from "react-icons/si";
+
+const projectLanguageIcons = {
+  "logos-android": SiAndroid,
+  "logos-firebase": SiFirebase,
+  "logos-go": SiGo,
+  "logos-kotlin": SiKotlin,
+  "logos-nodejs": SiNodedotjs,
+  "logos-postgresql": SiPostgresql,
+  "logos-rabbitmq": SiRabbitmq,
+  "logos-redis": SiRedis,
+  "logos-stellar": SiStellar,
+};
 
 function ProjectLanguages(props) {
   return (
@@ -8,6 +31,8 @@ function ProjectLanguages(props) {
       <div className="software-skills-main-div">
         <ul className="dev-icons-languages">
           {props.logos.map((logo) => {
+            const LanguageIcon = projectLanguageIcons[logo.iconifyClass];
+
             return (
               <OverlayTrigger
                 key={logo.name}
@@ -20,13 +45,17 @@ function ProjectLanguages(props) {
               >
                 <li
                   className="software-skill-inline-languages"
-                  name={logo.skillName}
+                  name={logo.name}
                 >
-                  <span
-                    className="iconify"
-                    data-icon={logo.iconifyClass}
-                    data-inline="false"
-                  ></span>
+                  {LanguageIcon ? (
+                    <LanguageIcon />
+                  ) : (
+                    <span
+                      className="iconify"
+                      data-icon={logo.iconifyClass}
+                      data-inline="false"
+                    ></span>
+                  )}
                 </li>
               </OverlayTrigger>
             );

@@ -1,35 +1,33 @@
 .dev-icons-languages {
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  font-size: 2rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: right;
+  text-align: left;
 }
 
 .software-skill-inline-languages {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 0px;
-  font-family: "Google Sans Regular";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px 0 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface-strong) 84%, transparent);
+  font-size: 1.35rem;
 }
 
 #tooltip-top > .tooltip-inner {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #062e56;
-  border-radius: 5px;
-  padding: 2.5px;
-  margin-bottom: 2px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #102038;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: "Google Sans Medium", sans-serif;
+  font-size: 0.78rem;
 }
 
 #tooltip-top > .tooltip-arrow {
-  border-top: 5px solid #062e56;
-}
-
-@media (max-width: 768px) {
-  .software-skill-inline-languages {
-    margin-right: 10px;
-    margin-bottom: 0px;
-  }
+  border-top: 5px solid #102038;
 }

@@ -1,144 +1,77 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Header.css";
 import { Fade } from "react-reveal";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { greeting, settings } from "../../portfolio.js";
-import { CgSun } from "react-icons/cg/";
+import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
-import { style } from "glamor";
 
 function Header(props) {
   const theme = props.theme;
+  const link = settings.isSplash ? "/splash" : "/home";
 
-  const styles = style({
-    cursor: "pointer",
-    height: "45px",
-    width: "45px",
-    marginRight: "5px",
-    marginLeft: "15px",
-    paddingTop: "5px",
-    borderRadius: "50%",
-    border: "none",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: props.theme.name === "light" ? "#7CD1F7" : "#292C3F",
-    outline: "none",
-    transition: "all 0.2s ease-in-out",
-    ":hover": {
-      boxShadow: `0 3px 8px ${
-        props.theme.name === "light" ? "#F7D774" : "#646464"
-      }`,
-    },
-  });
-
-  const link = settings.isSplash ? "/splash" : "home";
-
-  const [currTheme, setCurrTheme] = useState(props.theme);
+  const navItems = [
+    { label: "Home", to: "/home" },
+    { label: "Projects", to: "/projects" },
+    { label: "Experience", to: "/experience" },
+    { label: "Education", to: "/education" },
+    { label: "Contact", to: "/contact" },
+  ];
 
   function changeTheme() {
-    if (currTheme === "light") {
-      props.setTheme("dark");
-      localStorage.setItem("theme", "dark");
-      setCurrTheme("dark");
-    } else {
-      props.setTheme("light");
-      localStorage.setItem("theme", "light");
-      setCurrTheme("light");
-    }
+    const nextTheme = theme.name === "light" ? "dark" : "light";
+    props.setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
   }
 
-  const icon =
-    props.theme.name === "dark" ? (
-      <HiMoon
-        strokeWidth={1}
-        size={20}
-        color={props.theme.name === "light" ? "#F9D784" : "#A7A7A7"}
-      />
-    ) : (
-      <CgSun
-        strokeWidth={1}
-        size={20}
-        color={props.theme.name === "light" ? "#F9D784" : "#A7A7A7"}
-      />
-    );
-
   return (
-    <Fade top duration={1000} distance="20px">
-      <div>
-        <header className="header">
-          <NavLink to={link} tag={Link} className="logo">
-            <span style={{ color: theme.text }}></span>
-            <span className="logo-name" style={{ color: theme.text }}>
-              {greeting.logo_name}
-            </span>
-            <span style={{ color: theme.text }}></span>
-          </NavLink>
-          <input className="menu-btn" type="checkbox" id="menu-btn" />
-          <label className="menu-icon" htmlFor="menu-btn">
-            <span className="navicon"></span>
-          </label>
-          <ul className="menu">
-            <li>
+    <Fade top duration={800} distance="18px">
+      <header className="header">
+        <NavLink to={link} className="logo" aria-label="Go to home">
+          <span className="logo-name" style={{ color: theme.text }}>
+            {greeting.logo_name}
+          </span>
+        </NavLink>
+
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label
+          className="menu-icon"
+          htmlFor="menu-btn"
+          aria-label="Toggle menu"
+        >
+          <span className="navicon"></span>
+        </label>
+
+        <ul className="menu">
+          {navItems.map((item) => (
+            <li key={item.to}>
               <NavLink
-                className="homei"
-                to="/home"
-                tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
+                to={item.to}
+                activeClassName="active-nav-link"
+                className="nav-link"
+                style={{ color: theme.text }}
               >
-                Home
+                {item.label}
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className="projects"
-                to="/projects"
-                tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
-              >
-                Projects
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="xp"
-                to="/experience"
-                tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
-              >
-                Experience
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="ec"
-                to="/education"
-                tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
-              >
-                Educations
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="cr"
-                to="/contact"
-                tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
-              >
-                Contact and Resume
-              </NavLink>
-            </li>
-            <button {...styles} onClick={changeTheme}>
-              {icon}
+          ))}
+
+          <li>
+            <button
+              className="theme-toggle"
+              type="button"
+              onClick={changeTheme}
+              aria-label="Toggle theme"
+            >
+              {theme.name === "dark" ? (
+                <HiMoon size={18} />
+              ) : (
+                <CgSun size={18} />
+              )}
             </button>
-          </ul>
-        </header>
-      </div>
+          </li>
+        </ul>
+      </header>
     </Fade>
   );
 }

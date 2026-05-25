@@ -1,23 +1,31 @@
 .dev-icons {
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+  text-align: left;
 }
 
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-family: "Google Sans Regular";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px 8px 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+  font-size: 1.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.software-skill-inline > i {
-  color: #868e96;
+.software-skill-inline:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -24px var(--shadow-soft);
 }
 
-.software-skill-inline > i:hover {
-  color: #645beb;
+@media (max-width: 768px) {
+  .dev-icons {
+    text-align: center;
+  }
 }

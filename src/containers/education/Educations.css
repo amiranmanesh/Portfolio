@@ -1,18 +1,17 @@
-.educations-header {
-  font-size: 40px;
-  line-height: 1.1;
-  font-family: "Google Sans Regular";
+.educations-header-div {
+  margin: 2rem 0 1rem;
   text-align: center;
 }
 
-@media (max-width: 1380px) {
-  .educations-header {
-    font-size: 35px;
-  }
+.educations-header {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  font-family: "Google Sans Bold", sans-serif;
+  letter-spacing: -0.02em;
 }
 
-@media (max-width: 768px) {
-  .educations-header {
-    font-size: 30px;
-  }
+.educations-body-div {
+  display: grid;
+  gap: 16px;
 }

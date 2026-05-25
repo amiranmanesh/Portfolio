@@ -1,105 +1,60 @@
 .social-media-div {
-  font-size: 2em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
 }
 
-.icon-button i {
-  color: white;
-}
 .icon-button {
-  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  text-decoration: none;
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -24px var(--shadow-soft);
 }
 
 .icon-button i {
-  border-radius: 2.6rem;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1.3rem;
-  height: 2.6rem;
-  line-height: 2.6rem;
-  margin: 0 5px;
-  position: relative;
-  text-align: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 2.6rem;
-  margin-bottom: 10px;
+  font-size: 1.06rem;
 }
 
-.linkedin i {
-  background-color: #0e76a8;
-  transition: all 0.2s ease-in-out;
+.linkedin {
+  background: linear-gradient(145deg, #0e76a8, #0a4a7e);
 }
 
-.linkedin i:hover {
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px #0e76a8;
+.github {
+  background: linear-gradient(145deg, #394149, #11161a);
 }
 
-.github i {
-  background-color: #333;
-  transition: all 0.2s ease-in-out;
+.gitlab {
+  background: linear-gradient(145deg, #fca326, #e96f1f);
 }
 
-.github i:hover {
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px rgb(80, 80, 80);
+.google {
+  background: linear-gradient(145deg, #f06d5d, #dd3d2f);
 }
 
-.gitlab i {
-  background-color: #ffcc52;
-  transition: all 0.2s ease-in-out;
+.telegram,
+.twitter {
+  background: linear-gradient(145deg, #3ac3ff, #1a7fdd);
 }
 
-.gitlab i:hover {
-  color: rgb(255, 255, 255);
-  box-shadow: 0 5px 15px #ffcc52;
+.instagram {
+  background: linear-gradient(145deg, #fe8f54, #de2f7a);
 }
 
-.google i {
-  background-color: #ea4335;
-  transition: all 0.2s ease-in-out;
-}
-
-.google i:hover {
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px #ea4335;
-}
-
-.telegram i {
-  background-color: #1da1f2;
-  transition: all 0.2s ease-in-out;
-}
-
-.telegram i:hover {
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px #1da1f2;
-}
-
-.twitter i {
-  background-color: #1da1f2;
-  transition: all 0.2s ease-in-out;
-}
-
-.twitter i:hover {
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px #1da1f2;
-}
-
-.instagram i {
-  background-color: #e4405f;
-  transition: all 0.2s ease-in-out;
-}
-
-.instagram i:hover {
-  color: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 15px #e4405f;
-}
-
-/* Media Query */
 @media (max-width: 768px) {
   .social-media-div {
-    text-align: center;
+    justify-content: center;
   }
 }

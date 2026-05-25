@@ -2,86 +2,45 @@ import React from "react";
 import "./SocialMedia.css";
 import { socialMediaLinks } from "../../portfolio";
 
-export default function socialMedia() {
+const links = [
+  {
+    key: "gmail",
+    icon: "fa-google",
+    className: "google",
+    href: (v) => `mailto:${v}`,
+  },
+  { key: "telegram", icon: "fa-telegram", className: "telegram" },
+  { key: "linkedin", icon: "fa-linkedin-in", className: "linkedin" },
+  { key: "github", icon: "fa-github", className: "github" },
+  { key: "gitlab", icon: "fa-gitlab", className: "gitlab" },
+  { key: "twitter", icon: "fa-twitter", className: "twitter" },
+  { key: "instagram", icon: "fa-instagram", className: "instagram" },
+];
+
+export default function SocialMedia() {
   return (
     <div className="social-media-div">
-      {socialMediaLinks.gmail && (
-        <a
-          href={`mailto:${socialMediaLinks.gmail}`}
-          className="icon-button google"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-google"></i>
-          <span></span>
-        </a>
-      )}
-      {socialMediaLinks.telegram && (
-        <a
-          href={socialMediaLinks.telegram}
-          className="icon-button telegram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-telegram"></i>
-          <span></span>
-        </a>
-      )}
-      {socialMediaLinks.linkedin && (
-        <a
-          href={socialMediaLinks.linkedin}
-          className="icon-button linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin-in"></i>
-          <span></span>
-        </a>
-      )}
-      {socialMediaLinks.github && (
-        <a
-          href={socialMediaLinks.github}
-          className="icon-button github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github"></i>
-          <span></span>
-        </a>
-      )}
-      {socialMediaLinks.gitlab && (
-        <a
-          href={socialMediaLinks.gitlab}
-          className="icon-button gitlab"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-gitlab"></i>
-          <span></span>
-        </a>
-      )}
-      {socialMediaLinks.twitter && (
-        <a
-          href={socialMediaLinks.twitter}
-          className="icon-button twitter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-twitter"></i>
-          <span></span>
-        </a>
-      )}
-      {socialMediaLinks.instagram && (
-        <a
-          href={socialMediaLinks.instagram}
-          className="icon-button instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-instagram"></i>
-          <span></span>
-        </a>
-      )}
+      {links.map((link) => {
+        const value = socialMediaLinks[link.key];
+        if (!value) {
+          return null;
+        }
+
+        const href = link.href ? link.href(value) : value;
+
+        return (
+          <a
+            key={link.key}
+            href={href}
+            className={`icon-button ${link.className}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.key}
+          >
+            <i className={`fab ${link.icon}`}></i>
+          </a>
+        );
+      })}
     </div>
   );
 }

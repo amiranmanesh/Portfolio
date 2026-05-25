@@ -16,8 +16,7 @@ const greeting = {
   full_name: "Amir Iranmanesh",
   subTitle:
     "Engineering Manager and Senior Backend Engineer with 7+ years building distributed systems, blockchain platforms, and financial infrastructure at scale.",
-  resumeLink:
-    "https://drive.google.com/file/d/17HCKQFAcqZoSI9jTEsolAB_QuN0vhZSP/view?usp=sharing",
+  resumeLink: "",
   mail: "mailto:iranmanesh.ah@gmail.com",
 };
 
@@ -26,6 +25,7 @@ const socialMediaLinks = {
   github: "https://github.com/amiranmanesh/",
   linkedin: "https://www.linkedin.com/in/amiranmanesh/",
   gmail: "iranmanesh.ah@gmail.com",
+  telegram: "https://t.me/iranmanesh_ah",
   website: "https://amiranmanesh.ir",
 };
 

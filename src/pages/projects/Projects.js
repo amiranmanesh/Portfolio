@@ -6,27 +6,21 @@ import { Fade } from "react-reveal";
 import { projectsHeader, projects } from "../../portfolio.js";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
-import { style } from "glamor";
 
 function Projects(props) {
   const theme = props.theme;
 
-  const styles = style({
-    backgroundColor: `${theme.accentBright}`,
-    ":hover": {
-      boxShadow: `0 5px 15px ${theme.accentBright}`,
-    },
-  });
-
   return (
     <div className="projects-main">
       <Header theme={theme} setTheme={props.setTheme} />
-      <div className="basic-projects">
-        <Fade bottom duration={2000} distance="40px">
+
+      <section className="basic-projects">
+        <Fade bottom duration={1200} distance="30px">
           <div className="projects-heading-div">
             <div className="projects-heading-img-div">
               <ProjectsImg theme={theme} />
             </div>
+
             <div className="projects-heading-text-div">
               <h1
                 className="projects-heading-text"
@@ -35,33 +29,33 @@ function Projects(props) {
                 {projectsHeader.title}
               </h1>
               <p
-                className="projects-header-detail-text subTitle"
+                className="projects-header-detail-text"
                 style={{ color: theme.secondaryText }}
               >
-                {projectsHeader["description"]}
+                {projectsHeader.description}
               </p>
             </div>
           </div>
         </Fade>
-      </div>
-      <div className="repo-cards-div-main">
-        {projects.data.map((repo) => {
-          return <ProjectCard repo={repo} theme={theme} />;
-        })}
-      </div>
-      <br />
-      <br />
-      <br />
+      </section>
+
+      <section className="repo-cards-div-main">
+        {projects.data.map((repo) => (
+          <ProjectCard key={repo.id} repo={repo} theme={theme} />
+        ))}
+      </section>
+
       <a
-        {...styles}
-        className="general-btn"
+        className="projects-more-btn"
         href="https://github.com/amiranmanesh"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ backgroundColor: theme.accentColor }}
       >
-        More Projects (Github)
+        More Projects on GitHub
       </a>
-      <br />
-      <br />
-      <Footer theme={props.theme} onToggle={props.onToggle} />
+
+      <Footer theme={props.theme} />
     </div>
   );
 }

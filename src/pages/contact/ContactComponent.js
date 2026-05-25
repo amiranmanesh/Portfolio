@@ -5,45 +5,41 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
 import { greeting, contactPageData } from "../../portfolio.js";
-import { style } from "glamor";
 
 const ContactData = contactPageData.contactSection;
 
 function Contact(props) {
   const theme = props.theme;
-
-  const styles = style({
-    backgroundColor: `${theme.accentBright}`,
-    ":hover": {
-      boxShadow: `0 5px 15px ${theme.accentBright}`,
-    },
-  });
+  const showResumeLink =
+    greeting.resumeLink && !greeting.resumeLink.includes("drive.google.com");
 
   return (
     <div className="contact-main">
       <Header theme={theme} setTheme={props.setTheme} />
-      <div className="basic-contact">
-        <Fade bottom duration={1000} distance="40px">
+
+      <section className="basic-contact">
+        <Fade bottom duration={1000} distance="30px">
           <div className="contact-heading-div">
             <div className="contact-heading-img-div">
               <img
                 className="profile-pic"
-                src={require(`../../assests/images/${ContactData["profile_image_path"]}`)}
-                alt=""
+                src={require(`../../assests/images/${ContactData.profile_image_path}`)}
+                alt={greeting.full_name}
               />
             </div>
+
             <div className="contact-heading-text-div">
               <h1
                 className="contact-heading-text"
                 style={{ color: theme.text }}
               >
-                {ContactData["title"]}
+                {ContactData.title}
               </h1>
               <p
-                className="contact-header-detail-text subTitle"
+                className="contact-header-detail-text"
                 style={{ color: theme.secondaryText }}
               >
-                {ContactData["description"]}
+                {ContactData.description}
               </p>
 
               <div
@@ -66,16 +62,24 @@ function Contact(props) {
               </div>
 
               <SocialMedia />
-              <br />
-              <br />
-              <a {...styles} className="general-btn" href={greeting.resumeLink}>
-                View resume
-              </a>
+
+              {showResumeLink && (
+                <a
+                  className="contact-resume-btn"
+                  href={greeting.resumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ backgroundColor: theme.accentColor }}
+                >
+                  View Resume
+                </a>
+              )}
             </div>
           </div>
         </Fade>
-      </div>
-      <Footer theme={props.theme} onToggle={props.onToggle} />
+      </section>
+
+      <Footer theme={props.theme} />
     </div>
   );
 }

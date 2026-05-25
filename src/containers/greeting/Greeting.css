@@ -1,51 +1,115 @@
 .main {
-  width: 90%;
-  padding: 0px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
+  width: min(1180px, calc(100% - 32px));
+  margin: 3.4rem auto;
 }
 
 .greet-main {
-  max-width: 1370px;
-  padding: 10px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-  display: block;
+  width: min(1180px, calc(100% - 32px));
+  margin: 2rem auto 0;
 }
 
 .greeting-main {
-  display: flex;
-  /* text-align: center; */
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 26px;
+  align-items: center;
 }
 
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
+.greeting-text-div {
+  padding: clamp(18px, 2.4vw, 28px);
+  border-radius: 28px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  box-shadow: 0 20px 42px -30px var(--shadow-soft);
 }
 
-.button-greeting-div {
-  display: flex;
-  margin-top: 20px;
+.greeting-kicker {
+  display: inline-block;
+  font-family: "Google Sans Bold", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
 }
 
 .greeting-text {
-  margin-top: 110px;
-  font-size: 70px;
-  line-height: 5px;
-  font-family: "Google Sans Bold";
+  margin: 12px 0 4px;
+  font-size: clamp(2.9rem, 8vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  font-family: "Google Sans Bold", sans-serif;
 }
 
-.greeting-nickname {
-  font-size: 30px;
-  line-height: 0px;
-  font-family: "Google Sans Bold Italic";
+.greeting-name-dot {
+  font-size: 0.9em;
 }
 
 .greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
-  margin-right: 40px;
-  font-family: "Google Sans Medium";
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(1.02rem, 1.95vw, 1.32rem);
+  line-height: 1.82;
+  font-family: "Google Sans Medium", sans-serif;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 18px;
+}
+
+.hero-highlights li {
+  padding: 8px 12px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-family: "Google Sans Medium", sans-serif;
+  font-size: 0.9rem;
+  background: color-mix(in srgb, var(--surface-strong) 70%, transparent);
+}
+
+.portfolio-repo-btn-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-family: "Google Sans Medium", sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 15px 30px -24px var(--shadow-soft);
+}
+
+.hero-btn-primary {
+  color: #ffffff;
+}
+
+.hero-btn-secondary {
+  background: transparent;
+}
+
+.greeting-image-div {
+  padding: 14px;
+  border-radius: 28px;
+  border: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
 }
 
 .greeting-image-div > * {
@@ -53,64 +117,35 @@
   height: auto;
 }
 
-.button {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 1);
-  padding: 15px 15px;
-  margin-top: 25px;
-  border-radius: 4px;
-  border-width: 0px;
-  margin-bottom: 20px;
-  width: 200px;
-  height: 50px;
-  font-weight: bold;
-  font-family: "Google Sans Regular";
-  font-size: 17px;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
-  }
-
-  .greeting-text-p {
-    font-size: 20px;
-  }
-
-  .greet-main {
-    max-width: 900px;
-  }
-}
-@media (max-width: 768px) {
-  .button-greeting-div {
-    justify-content: space-around;
-  }
-  .greeting-text {
-    font-size: 30px;
-    margin-top: 0px;
-    text-align: center;
-  }
-  .greeting-nickname {
-    font-size: 25px;
-    text-align: center;
-  }
-  .greeting-text-p {
-    font-size: 16px;
-    margin-right: 0px;
-    line-height: normal;
-    text-align: center;
-  }
+@media (max-width: 980px) {
   .greeting-main {
-    display: block;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main,
+  .greet-main {
+    width: calc(100% - 24px);
+    margin-top: 1.8rem;
   }
 
-  .portfolio-repo-btn-div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  .greeting-text-div {
+    border-radius: 20px;
+  }
+
+  .greeting-text,
+  .greeting-text-p {
     text-align: center;
+  }
+
+  .greeting-kicker,
+  .hero-highlights,
+  .portfolio-repo-btn-div {
+    justify-content: center;
+  }
+
+  .hero-btn {
+    width: 100%;
   }
 }
