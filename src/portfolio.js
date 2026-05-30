@@ -260,7 +260,7 @@ const experience = {
           duration: "May 2024 – Present",
           location: "Tehran, Iran",
           description:
-            "Lead an engineering organization of 15+ across Backend, Frontend, and DevOps. Define OKRs and roadmaps, and oversee major initiatives including CBDC platform, payment infrastructure, enterprise wallet systems, PKI/cert services, and large-scale distributed microservices. Establish reliability standards through observability and on-call processes.",
+            "Lead an engineering organization of 15+ across Backend, Frontend, and DevOps. Own technical direction across Kuknos Blockchain, Borna Blockchain (CBDC), payment infrastructure, enterprise wallet systems, PKI/certificate services, and distributed backend platforms. Define OKRs and roadmaps, review architecture, and establish reliability standards through observability and on-call processes.",
           color: "#2563EB",
         },
         {
@@ -271,7 +271,7 @@ const experience = {
           duration: "May 2023 – May 2024",
           location: "Tehran, Iran",
           description:
-            "Designed and developed security-critical blockchain and cryptographic backend services across multiple platforms. Major contributor to Borna Blockchain (CBDC backbone), led integrations with banks/financial institutions, and reviewed microservice architectures, data consistency models, and secure API layers.",
+            "Led backend and blockchain engineering for Borna Blockchain, a Hyperledger Fabric-based CBDC platform for the Central Bank of Iran. Worked on secure integrations with banks and financial institutions, reviewed microservice architectures, data consistency models, and secure API layers.",
           color: "#2563EB",
         },
         {
@@ -282,7 +282,7 @@ const experience = {
           duration: "Sep 2021 – May 2023",
           location: "Tehran, Iran",
           description:
-            "Built PKI and digital certificate microservices, secure PDF-signing systems, and key-management workflows (Shamir Secret Sharing, WalletConnect). Delivered backend for tokenization and wallet platforms, improved authentication performance (3×), built federated identity services, and engineered encrypted storage with IPFS/Minio.",
+            "Worked on Kuknos Blockchain, a fork of Stellar, and built backend services around blockchain operations, tokenization, wallets, and signing flows. Also developed PKI and digital certificate microservices, secure PDF-signing systems, key-management workflows with Shamir Secret Sharing, federated identity services, and encrypted storage using IPFS/Minio.",
           color: "#2563EB",
         },
       ],
@@ -291,36 +291,14 @@ const experience = {
       title: "Fintech & Consulting",
       experiences: [
         {
-          title: "Backend Engineer",
-          company: "Lendin",
-          company_url: "https://lendin.com/",
-          logo_path: "",
-          duration: "May 2023 – Oct 2023",
-          location: "Remote, Canada",
-          description:
-            "Peer-to-peer lending with installment-based lending and crypto collateral. Led backend team and architected services using Go/Node.js, gRPC, PostgreSQL, RabbitMQ, Redis, NATS; integrated AWS services (Cognito, S3, DynamoDB); implemented loan lifecycle, repayment, wallet operations, and KYC flows.",
-          color: "#2563EB",
-        },
-        {
-          title: "Backend Engineer",
-          company: "ZaryaalGold",
+          title: "Technical Consultant",
+          company: "Vency",
           company_url: "",
           logo_path: "",
-          duration: "May 2023 – Oct 2023",
-          location: "Remote, Canada",
+          duration: "Jan 2026 – Apr 2026",
+          location: "Part-time",
           description:
-            "Designed custom financial ledger for token trading (non-blockchain). Automated pricing, commissions, order lifecycle, and settlement. Stack: Golang microservices, gRPC, RabbitMQ, Redis (distributed locking), PostgreSQL, Kong Gateway, Elastic/Kibana/Grafana.",
-          color: "#2563EB",
-        },
-        {
-          title: "Backend Engineer",
-          company: "GoldenGate",
-          company_url: "",
-          logo_path: "",
-          duration: "Jan 2025 – Mar 2025",
-          location: "",
-          description:
-            "Designed and developed distributed microservices for precious metal tokenization (non-blockchain ledger). Implemented secure wallet operations, asset issuance workflows, pricing, transaction logic, and high-availability settlement processes using Golang, gRPC, RabbitMQ, Redis, PostgreSQL, Stellar, Elastic/Grafana.",
+            "Designed HubChain, a multi-tenant blockchain middleware and orchestration service for user balances across 30+ cryptocurrencies and 35+ blockchain networks. Built a provider-agnostic architecture for wallet/address management, balance freeze/unfreeze, transfers, withdrawals, real-time sync, audit ledgers, Redis distributed locking, RabbitMQ events, gRPC/REST APIs, and Elastic APM-compatible observability.",
           color: "#2563EB",
         },
         {
@@ -331,7 +309,40 @@ const experience = {
           duration: "Mar 2025 – May 2025",
           location: "Part-time",
           description:
-            "Technical consultant focused on Golang backend development and microservices architecture. Reviewed and improved inter-service communication patterns for reliability and performance. Advised on WebSocket-based real-time chat microservice design and optimization.",
+            "Consulted on a high-load communication and messaging system using WebSocket, Redis Redlock, MongoDB, and concurrent processing. Improved real-time chat architecture, fixed CPU/RAM usage problems under heavy user load, and reviewed service reliability and performance.",
+          color: "#2563EB",
+        },
+        {
+          title: "Backend Engineer",
+          company: "GoldenGate",
+          company_url: "",
+          logo_path: "",
+          duration: "Jan 2025 – Mar 2025",
+          location: "",
+          description:
+            "Designed and developed a blockchain-based precious metal asset platform with a different architecture from ZaryaalGold. Implemented wallet operations, asset issuance workflows, pricing, transaction logic, settlement processes, and blockchain integration using Golang, gRPC, RabbitMQ, Redis, PostgreSQL, Stellar, Elastic/Grafana.",
+          color: "#2563EB",
+        },
+        {
+          title: "Backend Engineer",
+          company: "ZaryaalGold",
+          company_url: "",
+          logo_path: "",
+          duration: "Jul 2024 – Jan 2025",
+          location: "",
+          description:
+            "Developed a gold asset ecosystem for buying, selling, transferring, and settling user assets. Built backend services for user balances, IPG/payment flows, settlement, asset transfers, and a custom GL (general ledger). Stack: Golang microservices, gRPC, RabbitMQ, Redis, PostgreSQL, Kong Gateway, Elastic/Kibana/Grafana.",
+          color: "#2563EB",
+        },
+        {
+          title: "Backend Engineer",
+          company: "Lendin",
+          company_url: "https://lendin.com/",
+          logo_path: "",
+          duration: "May 2023 – Oct 2023",
+          location: "Remote",
+          description:
+            "Peer-to-peer lending with installment-based lending and crypto collateral. Led backend team and architected services using Go/Node.js, gRPC, PostgreSQL, RabbitMQ, Redis, NATS; integrated AWS services (Cognito, S3, DynamoDB); implemented loan lifecycle, repayment, wallet operations, and KYC flows.",
           color: "#2563EB",
         },
       ],
@@ -382,40 +393,40 @@ const projectsHeader = {
 const projects = {
   data: [
     {
-      id: "7",
-      name: "Lendin",
-      url: "https://lendin.com/",
+      id: "8",
+      name: "Weblitics",
+      url: "",
       description:
-        "Peer-to-peer lending platform with installment lending and crypto collateral.",
+        "Modular Go analytics platform where users create projects/sources and install a frontend SDK that sends events to backend ingestion services. Built with Go workspaces, Redis, PostgreSQL, ClickHouse, Elastic/Kibana, Prometheus, distributed worker pools, Redlock, and reliable high-throughput event processing for thousands of events.",
       languages: [
         {
           name: "Golang",
           iconifyClass: "logos-go",
-        },
-        {
-          name: "NodeJS",
-          iconifyClass: "logos-nodejs",
         },
         {
           name: "Redis",
           iconifyClass: "logos-redis",
         },
+        {
+          name: "PostgreSQL",
+          iconifyClass: "logos-postgresql",
+        },
       ],
     },
     {
-      id: "6",
-      name: "ZaryaalGold",
+      id: "7",
+      name: "HubChain",
       url: "",
       description:
-        "Custom financial ledger for token trading (non-blockchain), including settlement workflows and automation.",
+        "Multi-tenant blockchain middleware for balance management across 30+ currencies and 35+ networks with provider-agnostic integrations.",
       languages: [
         {
           name: "Golang",
           iconifyClass: "logos-go",
         },
         {
-          name: "PostgreSQL",
-          iconifyClass: "logos-postgresql",
+          name: "Redis",
+          iconifyClass: "logos-redis",
         },
         {
           name: "RabbitMQ",
@@ -424,11 +435,32 @@ const projects = {
       ],
     },
     {
+      id: "6",
+      name: "Dr. Saina Messaging",
+      url: "",
+      description:
+        "High-load WebSocket communication system with Redis Redlock, MongoDB concurrency handling, and CPU/RAM usage optimization.",
+      languages: [
+        {
+          name: "Golang",
+          iconifyClass: "logos-go",
+        },
+        {
+          name: "Redis",
+          iconifyClass: "logos-redis",
+        },
+        {
+          name: "MongoDB",
+          iconifyClass: "logos-mongodb",
+        },
+      ],
+    },
+    {
       id: "5",
       name: "GoldenGate",
       url: "",
       description:
-        "Microservices and wallet operations for precious metal tokenization with high-availability settlement.",
+        "Blockchain-based precious metal asset platform with wallet operations, issuance workflows, transaction processing, and settlement.",
       languages: [
         {
           name: "Golang",
@@ -446,6 +478,48 @@ const projects = {
     },
     {
       id: "4",
+      name: "ZaryaalGold",
+      url: "",
+      description:
+        "Gold asset ecosystem for buy, sell, transfer, IPG/payment settlement, user balances, and custom GL/general ledger operations.",
+      languages: [
+        {
+          name: "Golang",
+          iconifyClass: "logos-go",
+        },
+        {
+          name: "PostgreSQL",
+          iconifyClass: "logos-postgresql",
+        },
+        {
+          name: "RabbitMQ",
+          iconifyClass: "logos-rabbitmq",
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "Lendin",
+      url: "https://lendin.com/",
+      description:
+        "Peer-to-peer lending platform with installment lending, crypto collateral, loan lifecycle, repayment, wallet, and KYC flows.",
+      languages: [
+        {
+          name: "Golang",
+          iconifyClass: "logos-go",
+        },
+        {
+          name: "NodeJS",
+          iconifyClass: "logos-nodejs",
+        },
+        {
+          name: "Redis",
+          iconifyClass: "logos-redis",
+        },
+      ],
+    },
+    {
+      id: "2",
       name: "Radgir App",
       url: "https://radgir.net/",
       description:
@@ -462,7 +536,7 @@ const projects = {
       ],
     },
     {
-      id: "3",
+      id: "1",
       name: "HighFollower App",
       url: "https://highfollower.com/",
       description:
@@ -471,39 +545,6 @@ const projects = {
         {
           name: "Firebase",
           iconifyClass: "logos-firebase",
-        },
-        {
-          name: "Android",
-          iconifyClass: "logos-android",
-        },
-      ],
-    },
-    {
-      id: "2",
-      name: "Hesabchi App",
-      url: "https://hesabchiapp.ir/",
-      description:
-        "Tool to manage daily costs and shares between roommates and teams.",
-      languages: [
-        {
-          name: "Kotlin",
-          iconifyClass: "logos-kotlin",
-        },
-        {
-          name: "Android",
-          iconifyClass: "logos-android",
-        },
-      ],
-    },
-    {
-      id: "1",
-      name: "NerkhName App",
-      url: "https://b2n.ir/g18277",
-      description: "Real-time currency exchange price status Android app.",
-      languages: [
-        {
-          name: "Kotlin",
-          iconifyClass: "logos-kotlin",
         },
         {
           name: "Android",

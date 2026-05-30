@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   text-align: left;
 }
 
@@ -9,13 +13,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 8px 0 0;
+  flex: 0 0 38px;
+  margin: 0;
   width: 38px;
   height: 38px;
   border-radius: 10px;
   border: 1px solid var(--border-soft);
   background: color-mix(in srgb, var(--surface-strong) 84%, transparent);
   font-size: 1.35rem;
+  line-height: 1;
+}
+
+.software-skill-inline-languages svg,
+.software-skill-inline-languages .iconify {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 #tooltip-top > .tooltip-inner {
