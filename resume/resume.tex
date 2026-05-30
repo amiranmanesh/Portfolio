@@ -1,0 +1,180 @@
+\documentclass{resume}
+
+\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{Vazirmatn}{
+    \setmainfont{Vazirmatn}
+}{
+    \IfFontExistsTF{Vazir}{
+        \setmainfont{Vazir}
+    }{
+        \setmainfont{Helvetica Neue}
+    }
+}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Amir Iranmanesh}
+\address{+98 9399439483 \\ Tehran, Iran}
+\address{\href{mailto:iranmanesh.ah@gmail.com}{iranmanesh.ah@gmail.com} \\ 
+\href{https://linkedin.com/in/amiranmanesh}{linkedin.com/in/amiranmanesh} \\ 
+\href{https://github.com/amiranmanesh}{github.com/amiranmanesh}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%   OBJECTIVE
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{OBJECTIVE}
+\textbf{Engineering Manager \& Senior Backend Engineer} with 7+ years of experience leading teams and building distributed systems for fintech, blockchain, and security-critical platforms. Strong focus on \textbf{system architecture}, \textbf{team leadership}, \textbf{scalable backend engineering}, and \textbf{DLT/CBDC ecosystems}. 
+Expert in \textbf{Golang}, \textbf{microservices}, \textbf{high-concurrency systems}, and secure infrastructure.
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{EDUCATION}
+
+\textbf{M.Sc. in Artificial Intelligence}, Islamic Azad University (Science \& Research Branch), Tehran \\
+2022 -- 2025 \\
+\textbf{B.Sc. in Computer Engineering}, Semnan University \\
+2016 -- 2020
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%   SKILLS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{SKILLS}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming Languages & Golang, TypeScript/NodeJS, Rust, Python, Java, Kotlin \\
+Databases \& Messaging & PostgreSQL, MongoDB, Redis, DynamoDB, Kafka, RabbitMQ, NATS, gRPC \\
+Blockchain & Stellar, Ethereum, Hyperledger, Tokenization, Smart Contracts, PKI, DLT \\
+DevOps \& Infrastructure & Docker, Kubernetes, AWS (Cognito, S3, DynamoDB, Lambda), CI/CD, Kong \\
+Observability \& Security & Elastic Stack, Kibana, Prometheus, Grafana, Sentry, Shamir Secret Sharing \\
+Other Skills & System Architecture, Distributed Systems, WalletConnect, IPFS, MinIO \\
+\end{tabular}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%   EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{EXPERIENCE}
+
+%---------------------------------------------------------
+\textbf{Kuknos} \hfill \\
+\textbf{Chief Technology Officer (CTO)} \hfill 2024/05 -- Present
+\begin{itemize}
+    \item Lead an engineering organization of 15+ across backend, frontend, and DevOps.
+    \item Define OKRs, technical roadmaps, and architecture standards for major platform initiatives.
+    \item Oversee CBDC platform, payment infrastructure, enterprise wallet systems, PKI/certificate services, and distributed microservices.
+    \item Established reliability standards through observability and on-call processes.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{Team Lead} \hfill 2023/05 -- 2024/05
+\begin{itemize}
+    \item Designed and developed security-critical blockchain and cryptographic backend services.
+    \item Major contributor to \textbf{Borna Blockchain (CBDC backbone)} and bank/financial integrations.
+    \item Reviewed microservice architectures, data consistency models, and secure API layers.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{Backend Developer} \hfill 2021/09 -- 2023/05
+\begin{itemize}
+    \item Built PKI and digital-certificate microservices and secure PDF-signing systems.
+    \item Implemented \textbf{Shamir Secret Sharing} and key-management workflows for secure recovery.
+    \item Delivered tokenization and wallet platform backends, including WalletConnect-based signing services.
+    \item Improved authentication performance by 3x and developed federated identity services.
+    \item Engineered encrypted storage workflows using IPFS and MinIO.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{Lendin (Remote, Canada)} \hfill \\
+\textbf{Backend Engineer} \hfill 2023/05 -- 2023/10
+\begin{itemize}
+    \item Built backend services for a \textbf{peer-to-peer lending platform} with installment lending and crypto collateral.
+    \item Architected services using Golang/NodeJS, gRPC, PostgreSQL, Redis, NATS, and RabbitMQ.
+    \item Integrated AWS services including Cognito, DynamoDB, and S3.
+    \item Implemented loan lifecycle, repayment, wallet operations, and KYC flows.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{ZaryaalGold (Remote, Canada)} \hfill \\
+\textbf{Backend Engineer} \hfill 2023/05 -- 2023/10
+\begin{itemize}
+    \item Designed a custom financial ledger for token trading without blockchain.
+    \item Automated pricing, commissions, order lifecycle, and settlement workflows.
+    \item Built Golang microservices with gRPC, RabbitMQ, Redis, PostgreSQL, Kong, and Elastic/Kibana/Grafana.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{GoldenGate} \hfill \\
+\textbf{Backend Engineer} \hfill 2025/01 -- 2025/03
+\begin{itemize}
+    \item Developed distributed microservices for precious metal tokenization with high-availability settlement.
+    \item Implemented secure wallet operations, asset issuance workflows, pricing, and transaction processing.
+    \item Stack included Golang, gRPC, RabbitMQ, Redis, PostgreSQL, Stellar, Elastic, and Grafana.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{Dr. Saina (Part-time)} \hfill \\
+\textbf{Technical Consultant} \hfill 2025/03 -- 2025/05
+\begin{itemize}
+    \item Advised on Golang backend and microservices architecture for reliability and performance.
+    \item Improved inter-service communication patterns and reviewed real-time WebSocket chat service design.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{Backend Developer (Stock Platform)} \hfill 2020/10 -- 2021/06
+\begin{itemize}
+    \item Built real-time market data pipeline using Go, gRPC, and NATS for high-speed trade analysis.
+    \item Created data crawlers for orderbook aggregation, enabling automated trading insights.
+\end{itemize}
+
+%---------------------------------------------------------
+\textbf{Android Developer (Freelancer)} \hfill 2017 -- 2021
+\begin{itemize}
+    \item Delivered 10+ Android apps using MVVM/MVP, Firebase, ARCore, MLKit, Room DB.
+    \item Designed end-to-end mobile architectures with clean code and scalable UI components.
+\end{itemize}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%   PROJECTS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{PROJECTS}
+
+\textbf{CBDC (Digital Rial)} \\
+Architected and delivered identity, settlement, PKI, and transaction validation layers for the Central Bank's digital currency.
+
+\textbf{Borna Blockchain} \\
+Core blockchain backbone for CBDC services, with secure integrations to banks and financial institutions.
+
+\textbf{GoldenGate (Tokenized Precious Metals Platform)} \\
+Engineered tokenization and wallet operations with high-availability settlement and observability.
+
+\textbf{ZaryaalGold (Financial Ledger System)} \\
+Designed a non-blockchain financial ledger for gold/metal trading with automated settlement, pricing, and commission handling.
+
+\textbf{Secret File Manager} \\
+Implemented secure secret storage with Shamir Secret Sharing, multi-party recovery, and encrypted distributed storage.
+
+\textbf{DEX \& Wallet Ecosystem} \\
+Developed on-chain trading, WalletConnect integrations, signing modules, and crypto asset management services.
+
+\textbf{Personal Portfolio Website} \\
+Built and maintain a React-based portfolio website deployed via GitHub Pages to present experience, projects, and technical profile.
+
+\end{rSection}
+
+\end{document}
