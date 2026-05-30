@@ -4,7 +4,9 @@ LATEX ?= $(firstword $(shell command -v xelatex 2>/dev/null) $(wildcard /Library
 RESUME_DIR := resume
 RESUME_TEX := $(RESUME_DIR)/resume.tex
 RESUME_PDF := $(RESUME_DIR)/resume.pdf
+RESUME_FILE := $(notdir $(RESUME_TEX))
 RESUME_CLASS_DIR ?= $(HOME)/Documents/Resume
+RESUME_FONT_PATTERN := Vazir|Vazirmatn
 
 .PHONY: help install run build resume-pdf resume-font-check resume-clean clean
 
@@ -13,7 +15,7 @@ help:
 	@echo "  make install      Install Node.js dependencies"
 	@echo "  make run          Run portfolio app in development mode"
 	@echo "  make build        Build portfolio for production"
-	@echo "  make resume-pdf   Convert resume/source.tex to resume/source.pdf"
+	@echo "  make resume-pdf   Convert $(RESUME_TEX) to $(RESUME_PDF)"
 	@echo "  make resume-font-check Check whether Vazir/Vazirmatn is installed"
 	@echo "  make resume-clean Remove LaTeX auxiliary files"
 	@echo "  make clean        Remove LaTeX auxiliary files and PDF"
@@ -34,12 +36,17 @@ resume-pdf: $(RESUME_TEX)
 		echo "Then open a new terminal or run: export PATH=\"/Library/TeX/texbin:$$PATH\""; \
 		exit 1; \
 	fi
-	cd $(RESUME_DIR) && TEXINPUTS=".:$(RESUME_CLASS_DIR):" "$(LATEX)" -interaction=nonstopmode -halt-on-error source.tex
-	cd $(RESUME_DIR) && TEXINPUTS=".:$(RESUME_CLASS_DIR):" "$(LATEX)" -interaction=nonstopmode -halt-on-error source.tex
+	@if ! system_profiler SPFontsDataType 2>/dev/null | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
+		echo "Vazir/Vazirmatn font is not installed, so the resume cannot be compiled with Vazir."; \
+		echo "Install Vazirmatn or Vazir .ttf files in macOS Font Book, then run: make resume-pdf"; \
+		exit 1; \
+	fi
+	cd $(RESUME_DIR) && TEXINPUTS=".:$(RESUME_CLASS_DIR):" "$(LATEX)" -interaction=nonstopmode -halt-on-error "$(RESUME_FILE)"
+	cd $(RESUME_DIR) && TEXINPUTS=".:$(RESUME_CLASS_DIR):" "$(LATEX)" -interaction=nonstopmode -halt-on-error "$(RESUME_FILE)"
 	@echo "Created $(RESUME_PDF)"
 
 resume-font-check:
-	@if system_profiler SPFontsDataType 2>/dev/null | grep -Eiq "Vazir|Vazirmatn"; then \
+	@if system_profiler SPFontsDataType 2>/dev/null | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
 		echo "Vazir/Vazirmatn is installed."; \
 	else \
 		echo "Vazir/Vazirmatn is not installed."; \
