@@ -79,19 +79,80 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 18px;
   min-width: 170px;
   height: 46px;
   border-radius: 12px;
   color: #ffffff;
   text-decoration: none;
+  cursor: pointer;
   font-family: "Google Sans Medium", sans-serif;
+  border: 1px solid transparent;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.98rem;
+  padding: 0 18px;
 }
 
 .contact-resume-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 16px 28px -22px var(--shadow-soft);
+}
+
+.contact-resume-actions {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-resume-btn-outline {
+  background: transparent;
+}
+
+.contact-resume-link-fallback {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+}
+
+.contact-resume-link-fallback:hover {
+  border-color: currentColor;
+}
+
+.contact-resume-preview {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  box-shadow: 0 20px 38px -32px var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.contact-resume-preview-header {
+  min-height: 72px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.contact-resume-preview-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Google Sans Medium", sans-serif;
+}
+
+.contact-resume-frame {
+  width: 100%;
+  height: min(76vh, 980px);
+  border: 0;
+  background: #ffffff;
 }
 
 @media (max-width: 960px) {
@@ -107,8 +168,20 @@
     justify-content: center;
   }
 
+  .contact-resume-actions {
+    justify-content: center;
+  }
+
   .contact-resume-btn {
     width: 100%;
+  }
+
+  .contact-resume-preview-header {
+    justify-content: center;
+  }
+
+  .contact-resume-frame {
+    height: min(70vh, 820px);
   }
 }
 

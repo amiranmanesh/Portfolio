@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 LATEX ?= $(firstword $(shell command -v xelatex 2>/dev/null) $(wildcard /Library/TeX/texbin/xelatex))
-RESUME_DIR := resume
+RESUME_DIR := public/resume
 RESUME_TEX := $(RESUME_DIR)/resume.tex
 RESUME_PDF := $(RESUME_DIR)/resume.pdf
 RESUME_FILE := $(notdir $(RESUME_TEX))

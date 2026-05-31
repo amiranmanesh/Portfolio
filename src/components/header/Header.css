@@ -1,7 +1,7 @@
 .header {
   position: sticky;
   top: 12px;
-  z-index: 20;
+  z-index: 10;
   display: block;
   max-width: 1180px;
   margin: 14px auto 0;
