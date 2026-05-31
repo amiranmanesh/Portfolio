@@ -10,7 +10,12 @@ export default function Greeting(props) {
   const theme = props.theme;
   const history = useHistory();
 
-  const highlights = ["7+ Years", "15+ Engineers Led", "Fintech + Blockchain"];
+  const highlights = [
+    "7+ Years",
+    "Backend Architecture",
+    "Distributed Systems",
+    "Fintech + Blockchain",
+  ];
   const showResumeLink =
     greeting.resumeLink && !greeting.resumeLink.includes("drive.google.com");
 
