@@ -235,26 +235,21 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 
 Package fontspec Info: 
-(fontspec)             Could not resolve font "Vazir/I" (it probably doesn't
-(fontspec)             exist).
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'Vazir(0)' created for font 'Vazir' with
-(fontspec)             options [Ligatures=TeX,Ligatures=TeX].
+(fontspec)             Font family 'HelveticaNeue(0)' created for font
+(fontspec)             'Helvetica Neue' with options
+(fontspec)             [Ligatures=TeX,Ligatures=TeX].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Vazir/OT:script=latn;language=dflt;mapping=tex-text;
-"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"Vazir/B/OT:script=latn;language=dflt;mapping=tex-tex
-t;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"Vazir/BI/OT:script=latn;language=dflt;mapping=tex-te
-xt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Helvetica
+(fontspec)             Neue/AAT:mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Helvetica
+(fontspec)             Neue/B/AAT:mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Helvetica
+(fontspec)             Neue/I/AAT:mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Helvetica
+(fontspec)             Neue/BI/AAT:mapping=tex-text;"
 
 
 (./resume.aux)
@@ -369,25 +364,32 @@ LaTeX Font Info:    Redeclaring symbol font `operators' on input line 25.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `normal' on input line 25.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Vazir(0)/m/n on input line 25.
+(Font)                  OT1/cmr/m/n --> TU/HelveticaNeue(0)/m/n on input line 2
+5.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `bold' on input line 25.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Vazir(0)/m/n on input line 25.
+(Font)                  OT1/cmr/bx/n --> TU/HelveticaNeue(0)/m/n on input line 
+25.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/Vazir(0)/m/n --> TU/Vazir(0)/m/n on input line 25.
+(Font)                  TU/HelveticaNeue(0)/m/n --> TU/HelveticaNeue(0)/m/n on 
+input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Vazir(0)/m/it on input line 25.
+(Font)                  OT1/cmr/m/it --> TU/HelveticaNeue(0)/m/it on input line
+ 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Vazir(0)/b/n on input line 25.
+(Font)                  OT1/cmr/bx/n --> TU/HelveticaNeue(0)/b/n on input line 
+25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 25.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/Vazir(0)/m/n --> TU/Vazir(0)/b/n on input line 25.
+(Font)                  TU/HelveticaNeue(0)/m/n --> TU/HelveticaNeue(0)/b/n on 
+input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Vazir(0)/b/it on input line 25.
+(Font)                  OT1/cmr/bx/it --> TU/HelveticaNeue(0)/b/it on input lin
+e 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
@@ -406,9 +408,9 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 25--25
 [1
 
 ]
-Overfull \hbox (5.68196pt too wide) in paragraph at lines 105--106
-[]\TU/Vazir(0)/m/n/10.95 Built provider-agnostic architecture for wallet/addres
-s management, real-time balance tracking, freeze/unfreeze,
+Overfull \hbox (5.02573pt too wide) in paragraph at lines 105--106
+[]\TU/HelveticaNeue(0)/m/n/10.95 Built provider-agnostic architecture for walle
+t/address management, real-time balance tracking, freeze/unfreeze,
  []
 
 [2] (./resume.aux)
@@ -420,11 +422,11 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10937 strings out of 469709
- 220982 string characters out of 5466024
- 680604 words of memory out of 5000000
- 39468 multiletter control sequences out of 15000+600000
- 631681 words of font info for 65 fonts, out of 8000000 for 9000
+ 10942 strings out of 469709
+ 221166 string characters out of 5466024
+ 680796 words of memory out of 5000000
+ 39471 multiletter control sequences out of 15000+600000
+ 630956 words of font info for 67 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  84i,6n,93p,578b,448s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
