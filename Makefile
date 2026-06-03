@@ -5,7 +5,7 @@ RESUME_DIR := public/resume
 RESUME_TEX := $(RESUME_DIR)/resume.tex
 RESUME_PDF := $(RESUME_DIR)/resume.pdf
 RESUME_FILE := $(notdir $(RESUME_TEX))
-RESUME_CLASS_DIR ?= $(HOME)/Documents/Resume
+RESUME_CLASS_DIR ?= $(RESUME_DIR)
 RESUME_FONT_PATTERN := Vazir|Vazirmatn
 
 .PHONY: help install run build resume-pdf resume-font-check resume-clean clean
@@ -36,9 +36,16 @@ resume-pdf: $(RESUME_TEX)
 		echo "Then open a new terminal or run: export PATH=\"/Library/TeX/texbin:$$PATH\""; \
 		exit 1; \
 	fi
-	@if ! system_profiler SPFontsDataType 2>/dev/null | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
+	@font_found=0; \
+	if command -v system_profiler >/dev/null 2>&1 && system_profiler SPFontsDataType 2>/dev/null | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
+		font_found=1; \
+	fi; \
+	if command -v fc-match >/dev/null 2>&1 && { fc-match Vazirmatn; fc-match Vazir; } | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
+		font_found=1; \
+	fi; \
+	if [ "$$font_found" -ne 1 ]; then \
 		echo "Vazir/Vazirmatn font is not installed, so the resume cannot be compiled with Vazir."; \
-		echo "Install Vazirmatn or Vazir .ttf files in macOS Font Book, then run: make resume-pdf"; \
+		echo "Install Vazirmatn or Vazir, then run: make resume-pdf"; \
 		exit 1; \
 	fi
 	cd $(RESUME_DIR) && TEXINPUTS=".:$(RESUME_CLASS_DIR):" "$(LATEX)" -interaction=nonstopmode -halt-on-error "$(RESUME_FILE)"
@@ -46,11 +53,13 @@ resume-pdf: $(RESUME_TEX)
 	@echo "Created $(RESUME_PDF)"
 
 resume-font-check:
-	@if system_profiler SPFontsDataType 2>/dev/null | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
+	@if command -v system_profiler >/dev/null 2>&1 && system_profiler SPFontsDataType 2>/dev/null | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
+		echo "Vazir/Vazirmatn is installed."; \
+	elif command -v fc-match >/dev/null 2>&1 && { fc-match Vazirmatn; fc-match Vazir; } | grep -Eiq "$(RESUME_FONT_PATTERN)"; then \
 		echo "Vazir/Vazirmatn is installed."; \
 	else \
 		echo "Vazir/Vazirmatn is not installed."; \
-		echo "Install the .ttf files into Font Book, then run: make resume-pdf"; \
+		echo "Install Vazirmatn or Vazir, then run: make resume-pdf"; \
 	fi
 
 resume-clean:

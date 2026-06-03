@@ -25,6 +25,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install resume build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-latex-extra fonts-vazirmatn fontconfig make
+
+      - name: Build resume PDF
+        run: |
+          make resume-pdf
+          make resume-clean
+
       - name: Build app
         run: |
           echo * Npm install *
